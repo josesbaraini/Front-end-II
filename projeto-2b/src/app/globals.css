@@ -35,6 +35,10 @@ a {
   text-decoration: none;
 }
 
+Image{
+  border: 2PX solid salmon;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
