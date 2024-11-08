@@ -1,0 +1,43 @@
+.lista{
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+
+}
+.listaitem{
+    margin: 20px;
+    font-size: 40px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+}
+
+.listaitem:hover{
+    color: rgb(175, 175, 175);
+}
+.images{
+    border-radius: 100%;
+}
+
+.barras{
+    display: none;
+}
+
+@media only screen and (max-width : 700px){
+    .barras{
+        display: block;
+    }
+    .nav{
+        display: none;
+    }
+    
+}
