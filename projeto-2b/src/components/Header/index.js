@@ -5,7 +5,7 @@ import styles from "./Header.module.css"
 const index = () =>{
     return (
         <header className={styles.header}>
-            <Image className={styles.barras} src='/images/3Barras.png' width={100} height={100}></Image>
+            <Image className={styles.barras} src='/images/3Barras.png' alt="paia" width={100} height={100}></Image>
             <h2>Superformas Géometricas</h2>
             <nav className={styles.nav}>
                 <ul className={styles.lista}>
@@ -21,7 +21,7 @@ const index = () =>{
                 </ul>    
             </nav>
 
-            <Image className={styles.images} src='/images/Logotipo.webp' width={100} height={100}></Image>
+            <Image className={styles.images} src='/images/Logotipo.webp' alt="paia" width={100} height={100}></Image>
         </header>
     )
 }

@@ -1,43 +1,58 @@
-.lista{
+.lista {
     list-style: none;
     display: flex;
     align-items: center;
+    transition: 0.6s;
+
 
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    transition: 0.6s;
+
 
 
 }
-.listaitem{
+
+.listaitem {
     margin: 20px;
     font-size: 40px;
-}
-.nav{
-    display: flex;
-    align-items: center;
+    transition: 0.6s;
+
 }
 
-.listaitem:hover{
+.nav {
+    display: flex;
+    align-items: center;
+    transition: 0.6s;
+
+}
+
+.listaitem:hover {
     color: rgb(175, 175, 175);
 }
-.images{
+
+.images {
     border-radius: 100%;
 }
 
-.barras{
+.barras {
     display: none;
+    transition: 0.6s;
+
 }
 
-@media only screen and (max-width : 700px){
-    .barras{
+@media only screen and (max-width : 700px) {
+    .barras {
         display: block;
     }
-    .nav{
+
+    .nav {
         display: none;
     }
-    
+
 }
