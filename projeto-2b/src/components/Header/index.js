@@ -2,10 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css"
 
+
+
 const index = () =>{
+   
     return (
         <header className={styles.header}>
-            <Image className={styles.barras} src='/images/3Barras.png' alt="paia" width={100} height={100}></Image>
+            <div className={styles.barras}>
+                <div className={`${styles.barra1} ${styles.barra}`}></div>
+                <div className={`${styles.barra2} ${styles.barra}`}></div>
+                <div className={`${styles.barra3} ${styles.barra}`}></div>
+
+            </div>
             <h2>Superformas Géometricas</h2>
             <nav className={styles.nav}>
                 <ul className={styles.lista}>
