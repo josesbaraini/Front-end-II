@@ -1,3 +1,5 @@
+'use client';
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css"
@@ -5,6 +7,7 @@ import styles from "./Header.module.css"
 
 
 const index = () =>{
+    const [alturala, setaltura] = useState(false)
    
     return (
         <header className={styles.header}>
@@ -14,7 +17,7 @@ const index = () =>{
                 <div className={`${styles.barra3} ${styles.barra}`}></div>
 
             </div>
-            <h2>Superformas Géometricas</h2>
+            <h2 className={styles.h2}>Superformas Géometricas</h2>
             <nav className={styles.nav}>
                 <ul className={styles.lista}>
                     <li className={styles.listaitem}>
