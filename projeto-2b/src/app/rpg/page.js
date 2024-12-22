@@ -28,11 +28,11 @@ export default function App() {
     }
   }
 
-  const [certos, setCertos] = useState(_.sortBy(['Sombras', 'Raios', 'Ether', 'Sangue', 'Mundo', 'Abandono', 'Força'], (item) => item.toLowerCase()));
+  const [certos, setCertos] = useState(_.sortBy(['Rei', 'Raios', 'Magia', 'Tremer', 'Mundo', 'Abandono', 'Força'], (item) => item.toLowerCase()));
   const [errados, setErrados] = useState([
-    'Puresa', 'Sabedoria', 'Coragem', 'Gelo', 'Totalida', 'Rei', 'Monarca', 'Invencivel', 'Poder', 'Burro', 'Calor', 'Amor', 
-    'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Tremer', 'Macaco', 'Olhar', 'Futuro', 'Enigma', 
-    'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Magia', 'Evolução', 'Arma', 'Alquimia'
+    'Puresa', 'Sabedoria', 'Coragem', 'Gelo', 'Totalida', 'Sombras', 'Monarca', 'Invencivel', 'Poder', 'Burro', 'Calor', 'Amor', 
+    'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Sangue', 'Macaco', 'Olhar', 'Futuro', 'Enigma', 
+    'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Ether', 'Evolução', 'Arma', 'Alquimia'
   ]);
 
   useEffect(() => {
