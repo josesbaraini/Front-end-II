@@ -26,12 +26,12 @@ export default function App() {
     }
   }
 
-  const [certos, setCertos] = useState(['Sombras', 'Raios', 'Ether', 'Sangue', 'Mundo', 'Abandono', 'Força']);
-  const [errados, setErrados] = useState([
-    'Puresa', 'Sabedoria', 'Coragem', 'Gelo', 'Totalida', 'Rei', 'Monarca', 'Invencivel', 'Poder', 'Burro', 'Calor', 'Amor', 
-    'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Tremer', 'Macaco', 'Olhar', 'Futuro', 'Enigma', 
-    'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Magia', 'Evolução', 'Arma', 'Alquimia'
-  ]);
+  // const [certos, setCertos] = useState(['Sombras', 'Raios', 'Ether', 'Sangue', 'Mundo', 'Abandono', 'Força']);
+  // const [errados, setErrados] = useState([
+  //   'Puresa', 'Sabedoria', 'Coragem', 'Gelo', 'Totalida', 'Rei', 'Monarca', 'Invencivel', 'Poder', 'Burro', 'Calor', 'Amor', 
+  //   'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Tremer', 'Macaco', 'Olhar', 'Futuro', 'Enigma', 
+  //   'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Magia', 'Evolução', 'Arma', 'Alquimia'
+  // ]);
 
   useEffect(() => {
     const generateSelects = () => {
