@@ -9,7 +9,9 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft());
   const [isClient, setIsClient] = useState(false);
   const [selects, setSelects] = useState([[], [], [], [], [], [], []]);
-  const [selections, setSelections] = useState(Array(7).fill(null)); // Para armazenar os valores selecionados em cada select
+  
+  const [selections, setSelections] = useState(Array(7).fill('null')); // Para armazenar os valores selecionados em cada select
+  const [selectionsSort, setSelectionsSort] = useState(Array(7).fill('null'));
   const router = useRouter(); // Instancia o hook de navegação
 
   function calculateTimeLeft() {
@@ -26,12 +28,12 @@ export default function App() {
     }
   }
 
-  // const [certos, setCertos] = useState(['Sombras', 'Raios', 'Ether', 'Sangue', 'Mundo', 'Abandono', 'Força']);
-  // const [errados, setErrados] = useState([
-  //   'Puresa', 'Sabedoria', 'Coragem', 'Gelo', 'Totalida', 'Rei', 'Monarca', 'Invencivel', 'Poder', 'Burro', 'Calor', 'Amor', 
-  //   'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Tremer', 'Macaco', 'Olhar', 'Futuro', 'Enigma', 
-  //   'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Magia', 'Evolução', 'Arma', 'Alquimia'
-  // ]);
+  const [certos, setCertos] = useState(_.sortBy(['Sombras', 'Raios', 'Ether', 'Sangue', 'Mundo', 'Abandono', 'Força'], (item) => item.toLowerCase()));
+  const [errados, setErrados] = useState([
+    'Puresa', 'Sabedoria', 'Coragem', 'Gelo', 'Totalida', 'Rei', 'Monarca', 'Invencivel', 'Poder', 'Burro', 'Calor', 'Amor', 
+    'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Tremer', 'Macaco', 'Olhar', 'Futuro', 'Enigma', 
+    'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Magia', 'Evolução', 'Arma', 'Alquimia'
+  ]);
 
   useEffect(() => {
     const generateSelects = () => {
@@ -43,9 +45,10 @@ export default function App() {
       for (let i = 0; i < 7; i++) {
         const selectedCerto = _.sample(remainingCertos); // Pega 1 certo
         const selectedErrados = _.sampleSize(remainingErrados, 4); // Pega 4 errados
-
+        let selectTemp = [selectedCerto, ...selectedErrados]
+        selectTemp = _.sampleSize(selectTemp, 5)
         // Adiciona o certo e os errados no select correspondente
-        newSelects.push([selectedCerto, ...selectedErrados]);
+        newSelects.push(selectTemp);
 
         // Remove os itens usados da lista de certos e errados
         remainingCertos = remainingCertos.filter(item => item !== selectedCerto);
@@ -62,7 +65,9 @@ export default function App() {
     setIsClient(true); // Marca que o cliente está renderizando
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
+      
     }, 1000);
+
 
     return () => clearInterval(timer); // Cleanup
   }, [targetDate]);
@@ -76,17 +81,25 @@ export default function App() {
     return () => clearInterval(reloadTimer); // Cleanup do timer
   }, []);
 
+
+
   const handleSelectChange = (index, value) => {
     const newSelections = [...selections];
     newSelections[index] = value;
     setSelections(newSelections);
+    setSelectionsSort(_.sortBy(newSelections, (item) => item.toLowerCase()))
   };
 
-  const allCorrectSelected = selections.every((selection, index) => selection === selects[index][0]); // Verifica se todos os selects têm o "certo" selecionado
 
   const handleRedirect = () => {
-    router.push('/nextpage'); // Substitua '/nextpage' com o link de destino desejado
+    const sortedSelections = _.sortBy(selections, (item) => item.toLowerCase());
+    if (_.isEqual(sortedSelections, certos)) {
+      router.push('https://i.pinimg.com/736x/e6/b2/71/e6b271792a254c6ed907bb28b169efbb.jpg');
+    } else {
+      window.alert('Essa merdinha só existe pq o yuri pediu');
+    }
   };
+  
 
   if (!isClient) return null; // Evita renderizar durante a fase de SSR
 
@@ -125,7 +138,6 @@ export default function App() {
       <div className={styles.buttonWrapper}>
         <button className={styles.botao}
           onClick={handleRedirect}
-          disabled={!allCorrectSelected} // Desabilita o botão se nem todos os selects tiverem o "certo" selecionado
         >
           Ir para a próxima página
         </button>
