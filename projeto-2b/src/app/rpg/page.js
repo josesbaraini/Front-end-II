@@ -31,7 +31,7 @@ export default function App() {
   const [certos, setCertos] = useState(_.sortBy(['Rei', 'Raios', 'Magia', 'Tremer', 'Mundo', 'Abandono', 'Força'], (item) => item.toLowerCase()));
   const [errados, setErrados] = useState([
     'Puresa', 'Sabedoria', 'Coragem', 'Gelo', 'Totalida', 'Sombras', 'Monarca', 'Invencivel', 'Poder', 'Burro', 'Calor', 'Amor', 
-    'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Sangue', 'Macaco', 'Olhar', 'Futuro', 'Enigma', 
+    'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Sangue', 'Macaco', 'Enigma', 
     'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Ether', 'Evolução', 'Arma', 'Alquimia'
   ]);
 
