@@ -34,9 +34,9 @@ export default function App() {
     'Sniper', 'Longitude', 'Lua', 'Oraculo', 'Tempo', 'Sangue', 'Macaco', 'Enigma', 
     'Abibos', 'Dilatação', 'Gosma', 'Espada', 'Ether', 'Evolução', 'Arma', 'Alquimia',
     
-    'Corrupção', 'Burridão', 'Medo', 'Fogo', 'Parcialidade', 'Luz', 'Aldeão', 'Vencivel', 'Apoder', 'Inteligente', 'Frio', 'Amor2', 
-    'Pugilista', 'Latitude', 'Anti-magia', 'Estabilide', 'Cuidado', 'Fraqueza', 'Eletrisidades', 'Abibos2', 
-    'Atração', 'Constripação', 'Asperidade', 'Machado', 'Magicule', 'Involução', 'Paz', 'Desalquimia'
+    // 'Corrupção', 'Burridão', 'Medo', 'Fogo', 'Parcialidade', 'Luz', 'Aldeão', 'Vencivel', 'Apoder', 'Inteligente', 'Frio', 'Amor2', 
+    // 'Pugilista', 'Latitude', 'Anti-magia', 'Estabilide', 'Cuidado', 'Fraqueza', 'Eletrisidades', 'Abibos2', 
+    // 'Atração', 'Constripação', 'Asperidade', 'Machado', 'Magicule', 'Involução', 'Paz', 'Desalquimia'
   ]);
 
   useEffect(() => {
@@ -48,9 +48,9 @@ export default function App() {
       // Gerar cada select com 1 certo e 4 errados
       for (let i = 0; i < 7; i++) {
         const selectedCerto = _.sample(remainingCertos); // Pega 1 certo
-        const selectedErrados = _.sampleSize(remainingErrados, 8); // Pega 4 errados
+        const selectedErrados = _.sampleSize(remainingErrados, 4); // Pega 4 errados
         let selectTemp = [selectedCerto, ...selectedErrados]
-        selectTemp = _.sampleSize(selectTemp, 9)
+        selectTemp = _.sampleSize(selectTemp, 5)
         // Adiciona o certo e os errados no select correspondente
         newSelects.push(selectTemp);
 
