@@ -8,3 +8,15 @@
     background-color: black;
 
 }
+
+.imagem{
+    width: 800px;
+}
+
+@media (max-width: 768px) {
+.imagem{
+    width: 400px;
+    height: 400px;
+    transform: scale(500px);
+}
+  }

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from "react";
 import styles from "./page.module.css";
+import Image from "next/image";
 export default function () {
 
 
@@ -202,54 +203,9 @@ export default function () {
     let [classPB, setClassPB] = useState(0)
     return (
         <div >
-            <div className={styles.coisas}>
-                <p>Pontos Para destribuir: {(pointLeft + classPB)}</p>
-
-                <br></br>
-                <button onClick={() => aumentarStr()}>Menos</button>
-                <p>Str: {statStr.pontos + classBS}</p>
-                <button onClick={() => aumentarStr(true)}>Mais</button>
-                <br></br>
-
-                <button onClick={() => aumentarWis()}>Menos</button>
-                <p>Win: {statWis.pontos}</p>
-                <button onClick={() => aumentarWis(true)}>Mais</button>
-                <br></br>
-
-                <button onClick={() => aumentarDex()}>Menos</button>
-                <p>Dex: {statDex.pontos + classBD}</p>
-                <button onClick={() => aumentarDex(true)}>Mais</button>
-                <br></br>
-
-                <button onClick={() => aumentarInt()}>Menos</button>
-                <p>Int: {statInt.pontos + classeBI }</p>
-                <button onClick={() => aumentarInt(true)}>Mais</button>
-                <br></br>
-                <button onClick={() => aumentarCon()}>Menos</button>
-                <p>Con: {statCon.pontos + classBC}</p>
-                <button onClick={() => aumentarCon(true)}>Mais</button>
-                <br></br>
-
-                <button onClick={() => aumentarAmp()}>Menos</button>
-                <p>Amp: {statAmp.pontos}</p>
-                <button onClick={() => aumentarAmp(true)}>Mais</button>
-                <br></br>
-
-                <button onClick={() => aumentarEmp()}>Menos</button>
-                <p>Emp: {(statEmp.pontos)+classBE}</p>
-                <button onClick={() => aumentarEmp(true)}>Mais</button>
-                <br></br>
-
-                <button onClick={() => aumentarCha()}>Menos</button>
-                <p>Cha: {statCha.pontos}</p>
-                <button onClick={() => aumentarCha(true)}>Mais</button>
-                <br></br>
-
-
-
-
-            </div>
             <div>
+                
+
                 <select onChange={(ev)=>{bonusClasse(ev.target.value)}}>
                 {classes.map((classe) => (
                     <option key={classe.id}
@@ -260,9 +216,58 @@ export default function () {
                 ))}
 
                 </select>
-            <p>teste</p>
+                <Image className={styles.imagem} width={500} height={600} src='/images/image.png'></Image>
+            
 
             </div>
+            <div className={styles.coisas}>
+                <p>Pontos Para destribuir: {(pointLeft + classPB)}</p>
+
+                <br></br>
+                <button onClick={() => aumentarStr()}>Menos</button>
+                <p>Força: {statStr.pontos + classBS}</p>
+                <button onClick={() => aumentarStr(true)}>Mais</button>
+                <br></br>
+
+                <button onClick={() => aumentarWis()}>Menos</button>
+                <p>Sabedoria: {statWis.pontos}</p>
+                <button onClick={() => aumentarWis(true)}>Mais</button>
+                <br></br>
+
+                <button onClick={() => aumentarDex()}>Menos</button>
+                <p>Destreza: {statDex.pontos + classBD}</p>
+                <button onClick={() => aumentarDex(true)}>Mais</button>
+                <br></br>
+
+                <button onClick={() => aumentarInt()}>Menos</button>
+                <p>Inteligencia: {statInt.pontos + classeBI }</p>
+                <button onClick={() => aumentarInt(true)}>Mais</button>
+                <br></br>
+                <button onClick={() => aumentarCon()}>Menos</button>
+                <p>Constituição: {statCon.pontos + classBC}</p>
+                <button onClick={() => aumentarCon(true)}>Mais</button>
+                <br></br>
+
+                <button onClick={() => aumentarAmp()}>Menos</button>
+                <p>Apatia: {statAmp.pontos}</p>
+                <button onClick={() => aumentarAmp(true)}>Mais</button>
+                <br></br>
+
+                <button onClick={() => aumentarEmp()}>Menos</button>
+                <p>Empatia: {(statEmp.pontos)+classBE}</p>
+                <button onClick={() => aumentarEmp(true)}>Mais</button>
+                <br></br>
+
+                <button onClick={() => aumentarCha()}>Menos</button>
+                <p>Carisma: {statCha.pontos}</p>
+                <button onClick={() => aumentarCha(true)}>Mais</button>
+                <br></br>
+
+
+
+
+            </div>
+            
 
 
 
