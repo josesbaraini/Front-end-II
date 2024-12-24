@@ -1,0 +1,10 @@
+.coisas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coisas button{
+    background-color: black;
+
+}
