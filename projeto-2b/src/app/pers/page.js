@@ -263,6 +263,8 @@ export default function () {
                 <button onClick={() => aumentarCha(true)}>Mais</button>
                 <br></br>
 
+                <p>nadar : 0</p>
+
 
 
 
