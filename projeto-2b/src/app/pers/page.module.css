@@ -17,6 +17,45 @@
     margin-top: 40px;
     align-items: center;
 }
+.spins{
+    background-color: aqua;
+    height: 20px;
+    
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+}
+.spins2{
+    background-color: aqua;
+    width: 150px;
+    height: 20px;
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+}
+.spins2 p{
+    position: relative;
+    top: 20px;
+    
+    
+
+}
+.divloca{
+    height: 100vh;
+}
+
+.divloca button{
+    color: black;
+    margin: 30px;
+}
+.spins p{
+    position: relative;
+    
+    top: -356px;
+    transition: 10s;
+
+    
+}
 @media (max-width: 768px) {
     .main{
         display: flex;

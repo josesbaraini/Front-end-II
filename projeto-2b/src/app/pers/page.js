@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
+import _ from 'lodash';
 
 export default function () {
 
@@ -178,13 +179,13 @@ export default function () {
             setClassBD(0)
 
 
-
         } else if (classe === 'Matador') {
             setClassPB(+6)
             setClassBI(0)
             setClassBD(0)
             setClassBS(0)
             setClassBC(0)
+        
 
         } else if (classe === 'Guerreiro') {
             setClassBI(-4)
@@ -195,7 +196,7 @@ export default function () {
 
         }
 
-        console.log(bonus)
+        console.log(retornaListaSpin())
     }
     let [classeBI, setClassBI] = useState(0)
     let [classBE, setClassBe] = useState(0)
@@ -203,6 +204,107 @@ export default function () {
     let [classBD, setClassBD] = useState(0)
     let [classBC, setClassBC] = useState(0)
     let [classPB, setClassPB] = useState(0)
+    let p = 2
+    
+    const retornaListaSpin = () => {
+
+        const chances = familias.map((familia)=>(familia.chance));
+        const familiasI = familias.map((familia)=>(familia.id));
+
+        const weightedArray = _.flatMap(familiasI, (value, index) =>
+            (_.repeat(value +' ', chances[index]).split(" ")).filter((item)=> item!='')
+        );
+        let listaSpin = []
+        for (let index = 0; index < 20; index++) {
+        
+            listaSpin.push(_.sample(weightedArray))
+        }
+
+        listaSpin = listaSpin.map((item, index)=>({
+            'id':index,
+            'infoComplete':familias.find((familia)=>((item==familia.id)))
+
+        }))
+
+        
+        console.log(listaSpin);
+
+        return listaSpin;
+
+
+  
+
+
+
+
+
+
+    }
+    
+
+    let familias = [
+        {
+            "id": 1, "nome": "Haddock", 'bonus': p, 'chance': 1,
+        }, {
+            "id": 2, "nome": "Hofferson", 'bonus': p, 'chance': 3,
+        }, {
+            "id": 3, "nome": "Jorgenson", 'bonus': p, 'chance': 5,
+        }, {
+            "id": 4, "nome": "Thorston", 'bonus': p, 'chance': 5,
+        }, {
+            "id": 5, "nome": "Ingerman", 'bonus': p, 'chance': 5,
+        }, {
+            "id": 6, "nome": "Belchson", 'bonus': p, 'chance': 3,
+        }, {
+            "id": 7, "nome": "Blorage", 'bonus': p, 'chance': 3,
+        }, {
+            "id": 8, "nome": "Furane", 'bonus': p, 'chance': 2,
+        }, {
+            "id": 9, "nome": "Irmaul", 'bonus': p, 'chance': 7,
+        }, {
+            "id": 10, "nome": "Tideloot", 'bonus': p, 'chance': 7,
+        }, {
+            "id": 11, "nome": "Blatr", 'bonus': p, 'chance': 7,
+        }, {
+            "id": 12, "nome": "Skueave", 'bonus': p, 'chance': 2,
+        }, {
+            "id": 13, "nome": "Rotmouh", 'bonus': p, 'chance': 10,
+        }, {
+            "id": 14, "nome": "Sdebor", 'bonus': p, 'chance': 10,
+        }, {
+            "id": 15, "nome": "Dragnare", 'bonus': p, 'chance': 5,
+        }, {
+            "id": 16, "nome": "Skarden", 'bonus': p, 'chance': 5,
+        }, {
+            "id": 17, "nome": "Runeseer", 'bonus': p, 'chance': 10,
+        }, {
+            "id": 18, "nome": "Grudgestone", 'bonus': p, 'chance': 10,
+        }
+
+
+    ]
+
+    // a Familia é sempre a que ta no index 20
+    let [familiaList, setFamilia] = useState([])
+    const [familisPers, setFamiliaPers] = useState([])
+    const [spins, reduzirSpin] = useState(9)
+    const [spinList, setSpinList] = useState(`${styles.spins2}`)
+
+    const reduSpin = () =>{
+        if (spins>0) {
+            setSpinList(`${styles.spins2} ${styles.spins}` == spinList?`${styles.spins2}`:`${styles.spins2} ${styles.spins}`)
+            reduzirSpin(spins-1)
+        }
+        
+        
+
+    }
+
+    useEffect(()=>{
+        setFamilia(retornaListaSpin());
+    
+
+    },[spins]);
     return (
         <div className={styles.main} >
             <div>
@@ -210,25 +312,35 @@ export default function () {
 
 
                 <Image className={styles.imagem} alt="afis" width={500} height={600} src='/images/image.png'></Image>
-                
+
             </div>
-            <div>
+            <div className={styles.divloca}>
                 <p>Quem não dar Play perde</p>
                 <iframe
                     width="340"
                     height="360"
                     src="https://www.youtube.com/embed/9MCiixIkzUk?autoplay=1&mute=1&loop=1&playlist=9MCiixIkzUk"
                     title="Tuururu"
-                    
+
 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
                     allowFullScreen
                 ></iframe>
 
+                <div className={spinList}>
+                    {familiaList.map((familia)=>(
+                        <p key={familia.id}
+                            value={familia.infoComplete.nome}
+                        >{familia.infoComplete.nome}</p>
+                    ))}
+
+                </div>
+                <button onClick={()=>(reduSpin())}>Nooosa</button>
+
 
             </div>
             <div className={styles.coisas}>
-            <select onChange={(ev) => { bonusClasse(ev.target.value) }}>
+                <select onChange={(ev) => { bonusClasse(ev.target.value) }}>
                     {classes.map((classe) => (
                         <option key={classe.id}
                             value={classe.nome}>
