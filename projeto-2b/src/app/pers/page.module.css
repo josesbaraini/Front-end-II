@@ -12,8 +12,17 @@
 .imagem{
     width: 800px;
 }
-
+.main{
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+}
 @media (max-width: 768px) {
+    .main{
+        display: flex;
+        margin-top: 40px;
+        flex-direction: column;
+    }
 .imagem{
     width: 400px;
     height: 400px;

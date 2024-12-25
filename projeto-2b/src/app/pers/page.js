@@ -1,7 +1,9 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
+import dynamic from 'next/dynamic';
+
 export default function () {
 
 
@@ -160,13 +162,13 @@ export default function () {
         }
     }
     const classes = [
-        {'id': 1, 'nome':"Cavaleiro","bonus":[+2,]},
-        {'id': 2, 'nome':"Guerreiro","bonus":[-2,]},
-        {'id': 3, 'nome':"Matador","bonus":[-6,]}
+        { 'id': 1, 'nome': "Cavaleiro", "bonus": [+2,] },
+        { 'id': 2, 'nome': "Guerreiro", "bonus": [-2,] },
+        { 'id': 3, 'nome': "Matador", "bonus": [-6,] }
 
     ]
-    const bonusClasse = (classe) =>{
-        let bonus = (classes.find((item)=> item.nome == classe).bonus)
+    const bonusClasse = (classe) => {
+        let bonus = (classes.find((item) => item.nome == classe).bonus)
         setClassBe(bonus[0])
         if (classe === 'Cavaleiro') {
             setClassBS(-2)
@@ -174,25 +176,25 @@ export default function () {
             setClassPB(0)
             setClassBI(0)
             setClassBD(0)
-            
 
-            
-        }else if(classe === 'Matador') {
+
+
+        } else if (classe === 'Matador') {
             setClassPB(+6)
             setClassBI(0)
             setClassBD(0)
             setClassBS(0)
             setClassBC(0)
-            
-        }else if(classe === 'Guerreiro') {
+
+        } else if (classe === 'Guerreiro') {
             setClassBI(-4)
             setClassBD(+2)
             setClassBS(+2)
             setClassBC(+2)
             setClassPB(0)
-            
+
         }
-        
+
         console.log(bonus)
     }
     let [classeBI, setClassBI] = useState(0)
@@ -202,25 +204,40 @@ export default function () {
     let [classBC, setClassBC] = useState(0)
     let [classPB, setClassPB] = useState(0)
     return (
-        <div >
+        <div className={styles.main} >
             <div>
+
+
+
+                <Image className={styles.imagem} alt="afis" width={500} height={600} src='/images/image.png'></Image>
                 
+            </div>
+            <div>
+                <p>Quem não dar Play perde</p>
+                <iframe
+                    width="340"
+                    height="360"
+                    src="https://www.youtube.com/embed/9MCiixIkzUk?autoplay=1&mute=1&loop=1&playlist=9MCiixIkzUk"
+                    title="Tuururu"
+                    
 
-                <select onChange={(ev)=>{bonusClasse(ev.target.value)}}>
-                {classes.map((classe) => (
-                    <option key={classe.id}
-                            value={classe.nome}>
-                        {classe.nome}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
+                    allowFullScreen
+                ></iframe>
 
-                    </option>
-                ))}
-
-                </select>
-                <Image className={styles.imagem} width={500} height={600} src='/images/image.png'></Image>
-            
 
             </div>
             <div className={styles.coisas}>
+            <select onChange={(ev) => { bonusClasse(ev.target.value) }}>
+                    {classes.map((classe) => (
+                        <option key={classe.id}
+                            value={classe.nome}>
+                            {classe.nome}
+
+                        </option>
+                    ))}
+
+                </select>
                 <p>Pontos Para destribuir: {(pointLeft + classPB)}</p>
 
                 <br></br>
@@ -240,7 +257,7 @@ export default function () {
                 <br></br>
 
                 <button onClick={() => aumentarInt()}>Menos</button>
-                <p>Inteligencia: {statInt.pontos + classeBI }</p>
+                <p>Inteligencia: {statInt.pontos + classeBI}</p>
                 <button onClick={() => aumentarInt(true)}>Mais</button>
                 <br></br>
                 <button onClick={() => aumentarCon()}>Menos</button>
@@ -254,7 +271,7 @@ export default function () {
                 <br></br>
 
                 <button onClick={() => aumentarEmp()}>Menos</button>
-                <p>Empatia: {(statEmp.pontos)+classBE}</p>
+                <p>Empatia: {(statEmp.pontos) + classBE}</p>
                 <button onClick={() => aumentarEmp(true)}>Mais</button>
                 <br></br>
 
@@ -269,7 +286,7 @@ export default function () {
 
 
             </div>
-            
+
 
 
 
