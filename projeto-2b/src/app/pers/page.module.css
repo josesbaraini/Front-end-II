@@ -20,7 +20,7 @@
 .spins{
     background-color: rgb(0, 0, 0);
     height: 20px;
-    font-size: 17px;
+    font-size: 100%;
     
     
     text-align: center;
@@ -33,7 +33,7 @@
     height: 20px;
     text-align: center;
     overflow: hidden;
-    font-size: 17px;
+    font-size: 100%;
 }
 .spins2 p{
     top: 100%;

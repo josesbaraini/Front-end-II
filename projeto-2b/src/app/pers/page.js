@@ -338,13 +338,16 @@ export default function () {
     
 
     },[spins]);
+
+    const [imagemOnn, setImagemOn] = useState(true)
     return (
         <div className={styles.main} >
             <div>
 
 
 
-                <Image className={styles.imagem} alt="afis" width={500} height={600} src='/images/image.png'></Image>
+                {imagemOnn?<Image className={styles.imagem} alt="afis" width={500} height={600} src='/images/image.png'></Image>:''}
+                <button style={{color:  'black'}} onClick={()=>setImagemOn(!imagemOnn)}>{imagemOnn?'Botão que guarda a imagem':'Botão que Mostra a imagem'}</button>
 
             </div>
             <div  className={styles.divloca}>
