@@ -1,0 +1,48 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+
+    height: 100vh;
+}
+
+.info{
+    width: 70vw;
+    display: flex;
+    height: 40vh;
+    border: 2px solid rgb(255, 255, 255);
+}
+.habilidades{
+    border: 2px solid rgb(255, 255, 255);
+
+    width: 40%;
+    text-align: center;
+}
+
+.familiaClassDiv{
+    width: 100%;
+    display: flex;
+    border: 2px solid rgb(255, 255, 255);
+
+}
+
+.familiaClassNome{
+
+    width: 70%;
+}
+.estatisticas{
+    text-align: center;
+    width: 100%;
+ ;
+}
+.main button{
+    color: black;
+}
+
+.famaclassesta{
+
+    width: 100%;
+}
+
