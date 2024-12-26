@@ -291,8 +291,6 @@ export default function () {
 
     const reduSpin = () =>{
         if (spins>0) {
-
-            
             reduzirSpin(spins-1)
         }
         
