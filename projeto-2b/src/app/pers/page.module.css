@@ -20,22 +20,23 @@
 .spins{
     background-color: aqua;
     height: 20px;
+    font-size: 16.1px;
+    
     
     text-align: center;
-    overflow: hidden;
-    position: fixed;
+    /* overflow: hidden; */
 }
 .spins2{
     background-color: aqua;
+    transition: none;
     width: 150px;
     height: 20px;
     text-align: center;
-    overflow: hidden;
-    position: fixed;
+    /* overflow: hidden; */
+    font-size: 16.1px;
 }
 .spins2 p{
-    position: relative;
-    top: 20px;
+    top: 100%;
     
     
 
@@ -44,14 +45,14 @@
     height: 100vh;
 }
 
-.divloca button{
+.divSpins button{
     color: black;
     margin: 30px;
 }
 .spins p{
     position: relative;
     
-    top: -356px;
+    top: -1775%;
     transition: 10s;
 
     

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import dynamic from 'next/dynamic';
+import CardF from "@/components/CardF"
 import _ from 'lodash';
 
 export default function () {
@@ -195,8 +195,6 @@ export default function () {
             setClassPB(0)
 
         }
-
-        console.log(retornaListaSpin())
     }
     let [classeBI, setClassBI] = useState(0)
     let [classBE, setClassBe] = useState(0)
@@ -204,9 +202,14 @@ export default function () {
     let [classBD, setClassBD] = useState(0)
     let [classBC, setClassBC] = useState(0)
     let [classPB, setClassPB] = useState(0)
-    let p = 2
+    
+    const pegaF = ()=>{
+        return familiaList[19] || {'id':0,'infoComplete':{"id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance': 1}}
+
+    }
     
     const retornaListaSpin = () => {
+    
 
         const chances = familias.map((familia)=>(familia.chance));
         const familiasI = familias.map((familia)=>(familia.id));
@@ -216,19 +219,22 @@ export default function () {
         );
         let listaSpin = []
         for (let index = 0; index < 20; index++) {
-        
+            
             listaSpin.push(_.sample(weightedArray))
+
         }
+        
 
         listaSpin = listaSpin.map((item, index)=>({
             'id':index,
             'infoComplete':familias.find((familia)=>((item==familia.id)))
 
         }))
+        
+        
 
         
-        console.log(listaSpin);
-
+        
         return listaSpin;
 
 
@@ -244,41 +250,33 @@ export default function () {
 
     let familias = [
         {
-            "id": 1, "nome": "Haddock", 'bonus': p, 'chance': 1,
+            "id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance': 1,
         }, {
-            "id": 2, "nome": "Hofferson", 'bonus': p, 'chance': 3,
+            "id": 2, "nome": "Hofferson", 'bonus': {'descricao':"Uma familia de Pessoas fortes e Graciosas",'habilidade':"Ganha 3 de Dex a cada 2 niveis"}, 'chance': 5,
         }, {
-            "id": 3, "nome": "Jorgenson", 'bonus': p, 'chance': 5,
+            "id": 3, "nome": "Jorgenson", 'bonus': {'descricao':"Uma familia conhecida com por sua proeza fisica e resistencia","habilidade":"Ganha 1 ponto de Força ou Contituição por nivel"}, 'chance': 7,
         }, {
-            "id": 4, "nome": "Thorston", 'bonus': p, 'chance': 5,
+            "id": 4, "nome": "Thorston", 'bonus': {'descricao':'Uma familia de pessoa brutas e resistentes','habilidade':'Ganha 1 ponto de Constituicao ou Dextreza'}, 'chance': 7,
         }, {
-            "id": 5, "nome": "Ingerman", 'bonus': p, 'chance': 5,
+            "id": 5, "nome": "Ingerman", 'bonus': {'descricao':'Uma familia de pessoas estudiosas e empaticas','habilidade':'Ganha 1 ponto de empatia ou inteligencia por nivel'}, 'chance': 7,
         }, {
-            "id": 6, "nome": "Belchson", 'bonus': p, 'chance': 3,
+            "id": 6, "nome": "Belchson", 'bonus': {'descricao':'Uma familia não conhecida por sua inteligencia e sim pela engenhoside','habilidede':'Uma parte do corpo é "mecanica"'}, 'chance': 7,
         }, {
-            "id": 7, "nome": "Blorage", 'bonus': p, 'chance': 3,
+            "id": 7, "nome": "Blorage", 'bonus': {'descricao':'A familia dos lideres da tribo dos Bersekers', 'habilidade':'Almenta em 1 dado o numeros de dados de uma arma, para cada 4 niveis'}, 'chance': 6,
         }, {
-            "id": 8, "nome": "Furane", 'bonus': p, 'chance': 2,
+            "id": 8, "nome": "Furane", 'bonus': {'descricao':"Uma Familia de pessoas obcedas com seus Objetivos",'habilidade':'Ganha 1 ponto em uma habiliade da propria escolha por nivel (Menos Apatia e Empatia)'}, 'chance': 2,
         }, {
-            "id": 9, "nome": "Irmaul", 'bonus': p, 'chance': 7,
+            "id": 9, "nome": "Irmaul", 'bonus': {'descricao':'Uma familia de Homens sanguinarios e impiedodos','habilidade':'Ganha 1 ponto de Apatia a cada 2 niveis'}, 'chance': 3,
         }, {
-            "id": 10, "nome": "Tideloot", 'bonus': p, 'chance': 7,
+            "id": 10, "nome": "Tideloot", 'bonus': {'descricao':'Uma familia de comerciantes renomados', 'habilidade':'Ganha 1 ponto de carisma por nivel'}, 'chance': 11,
         }, {
-            "id": 11, "nome": "Blatr", 'bonus': p, 'chance': 7,
+            "id": 11, "nome": "Blatr", 'bonus': {'descricao':'Uma familia de pessoas astuta','habiliades':'Ganha 1 ponto de Inteligencia por nivel'}, 'chance': 10,
         }, {
-            "id": 12, "nome": "Skueave", 'bonus': p, 'chance': 2,
+            "id": 12, "nome": "Skueave", 'bonus': {'descricao':'Uma familia forte e resistente','habalidade':'Ganha 1 ponto de sabedoria e 1 de força por nivel'}, 'chance': 3,
         }, {
-            "id": 13, "nome": "Rotmouh", 'bonus': p, 'chance': 10,
+            "id": 13, "nome": "Rotmouh", 'bonus': {'descricao':'Uma familia de seres ransinsas porem resilientes','habilidade':'Ganha 1 de constituiçâo ou em inteligencia a cada 2 niveis'}, 'chance': 15,
         }, {
-            "id": 14, "nome": "Sdebor", 'bonus': p, 'chance': 10,
-        }, {
-            "id": 15, "nome": "Dragnare", 'bonus': p, 'chance': 5,
-        }, {
-            "id": 16, "nome": "Skarden", 'bonus': p, 'chance': 5,
-        }, {
-            "id": 17, "nome": "Runeseer", 'bonus': p, 'chance': 10,
-        }, {
-            "id": 18, "nome": "Grudgestone", 'bonus': p, 'chance': 10,
+            "id": 14, "nome": "Sdebor", 'bonus': {'descricao':'Uma familia de pessoas sombrias e subservientes','habilidade':'Ganha 1 ponto de força a cada 3 niveis, caso sirva ao um Skueave'}, 'chance': 16,
         }
 
 
@@ -286,13 +284,14 @@ export default function () {
 
     // a Familia é sempre a que ta no index 20
     let [familiaList, setFamilia] = useState([])
-    const [familisPers, setFamiliaPers] = useState([])
+    const [familisPers, setFamiliaPers] = useState({'id':0,'infoComplete':{"id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance': 1}})
     const [spins, reduzirSpin] = useState(9)
     const [spinList, setSpinList] = useState(`${styles.spins2}`)
 
     const reduSpin = () =>{
         if (spins>0) {
-            setSpinList(`${styles.spins2} ${styles.spins}` == spinList?`${styles.spins2}`:`${styles.spins2} ${styles.spins}`)
+
+            
             reduzirSpin(spins-1)
         }
         
@@ -301,7 +300,40 @@ export default function () {
     }
 
     useEffect(()=>{
-        setFamilia(retornaListaSpin());
+        if (spinList==`${styles.spins2}`) {
+            setSpinList(`${styles.spins2} ${styles.spins}`)
+
+        }else{
+            setSpinList(`${styles.spins2}`)
+            setInterval(() => {
+                setSpinList(`${styles.spins2} ${styles.spins}`)
+                
+            }, 1000);
+
+        }
+        
+
+        
+
+    },[familiaList]);
+
+
+    useEffect(()=>{
+        
+
+        setFamiliaPers(pegaF());
+        console.log(familisPers.infoComplete.nome)
+        
+
+    },[familiaList]);
+
+    useEffect(()=>{
+
+        setFamiliaPers(pegaF());
+
+        let setfamilia = retornaListaSpin();
+        setFamilia(setfamilia);
+        
     
 
     },[spins]);
@@ -327,7 +359,8 @@ export default function () {
                     allowFullScreen
                 ></iframe>
 
-                <div className={spinList}>
+                <div className={styles.divSpins}>
+                    <div className={spinList}>
                     {familiaList.map((familia)=>(
                         <p key={familia.id}
                             value={familia.infoComplete.nome}
@@ -336,6 +369,19 @@ export default function () {
 
                 </div>
                 <button onClick={()=>(reduSpin())}>Nooosa</button>
+
+                {<CardF
+                    
+                      key={familisPers.id}
+    
+                      chance={familisPers.infoComplete.chance}
+                      nome={familisPers.infoComplete.nome}
+                      descricao={familisPers.infoComplete.bonus.descricao}
+                      habilidade={familisPers.infoComplete.bonus.habilidade}
+                      />
+                
+                    }
+                    </div>
 
 
             </div>
