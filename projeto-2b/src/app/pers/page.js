@@ -204,14 +204,14 @@ export default function () {
     let [classPB, setClassPB] = useState(0)
     
     const pegaF = ()=>{
-        return familiaList[19] || {'id':0,'infoComplete':{"id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance': 1}}
+        return familiaList[19] || {'id':0,'infoComplete':familias[0]}
 
     }
     
     const retornaListaSpin = () => {
     
 
-        const chances = familias.map((familia)=>(familia.chance));
+        const chances = familias.map((familia)=>(familia.chance[0]));
         const familiasI = familias.map((familia)=>(familia.id));
 
         const weightedArray = _.flatMap(familiasI, (value, index) =>
@@ -250,33 +250,34 @@ export default function () {
 
     let familias = [
         {
-            "id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance': 1,
+            "id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance':[ 1,'rgb(116, 0, 211)']
+,
         }, {
-            "id": 2, "nome": "Hofferson", 'bonus': {'descricao':"Uma familia de Pessoas fortes e Graciosas",'habilidade':"Ganha 3 de Dex a cada 2 niveis"}, 'chance': 5,
+            "id": 2, "nome": "Hofferson", 'bonus': {'descricao':"Uma familia de Pessoas fortes e Graciosas",'habilidade':"Ganha 3 de Dex a cada 2 niveis"}, 'chance':[ 5,'rgb(255, 153, 0)'],
         }, {
-            "id": 3, "nome": "Jorgenson", 'bonus': {'descricao':"Uma familia conhecida com por sua proeza fisica e resistencia","habilidade":"Ganha 1 ponto de Força ou Contituição por nivel"}, 'chance': 7,
+            "id": 3, "nome": "Jorgenson", 'bonus': {'descricao':"Uma familia conhecida com por sua proeza fisica e resistencia","habilidade":"Ganha 1 ponto de Força ou Contituição por nivel"}, 'chance':[ 7,'rgb(250, 0, 0)'],
         }, {
-            "id": 4, "nome": "Thorston", 'bonus': {'descricao':'Uma familia de pessoa brutas e resistentes','habilidade':'Ganha 1 ponto de Constituicao ou Dextreza'}, 'chance': 7,
+            "id": 4, "nome": "Thorston", 'bonus': {'descricao':'Uma familia de pessoa brutas e resistentes','habilidade':'Ganha 1 ponto de Constituicao ou Dextreza'}, 'chance':[ 7,'rgb(250, 0, 0)'],
         }, {
-            "id": 5, "nome": "Ingerman", 'bonus': {'descricao':'Uma familia de pessoas estudiosas e empaticas','habilidade':'Ganha 1 ponto de empatia ou inteligencia por nivel'}, 'chance': 7,
+            "id": 5, "nome": "Ingerman", 'bonus': {'descricao':'Uma familia de pessoas estudiosas e empaticas','habilidade':'Ganha 1 ponto de empatia ou inteligencia por nivel'}, 'chance':[ 7,'rgb(250, 0, 0)'],
         }, {
-            "id": 6, "nome": "Belchson", 'bonus': {'descricao':'Uma familia não conhecida por sua inteligencia e sim pela engenhoside','habilidade':'Uma parte do corpo é "mecanica"'}, 'chance': 7,
+            "id": 6, "nome": "Belchson", 'bonus': {'descricao':'Uma familia não conhecida por sua inteligencia e sim pela engenhoside','habilidade':'Uma parte do corpo é "mecanica"'}, 'chance':[ 7,'rgb(250, 0, 0)'],
         }, {
-            "id": 7, "nome": "Blorage", 'bonus': {'descricao':'A familia dos lideres da tribo dos Bersekers', 'habilidade':'Almenta em 1 dado o numeros de dados de uma arma, para cada 4 niveis'}, 'chance': 6,
+            "id": 7, "nome": "Blorage", 'bonus': {'descricao':'A familia dos lideres da tribo dos Bersekers', 'habilidade':'Almenta em 1 dado o numeros de dados de uma arma, para cada 4 niveis'}, 'chance':[ 7,'rgb(250, 0, 0)'],
         }, {
-            "id": 8, "nome": "Furane", 'bonus': {'descricao':"Uma Familia de pessoas obcedas com seus Objetivos",'habilidade':'Ganha 1 ponto em uma habiliade da propria escolha por nivel (Menos Apatia e Empatia)'}, 'chance': 2,
+            "id": 8, "nome": "Furane", 'bonus': {'descricao':"Uma Familia de pessoas obcedas com seus Objetivos",'habilidade':'Ganha 1 ponto em uma habiliade da propria escolha por nivel (Menos Apatia e Empatia)'}, 'chance':[ 3,'rgb(255, 255, 0)'],
         }, {
-            "id": 9, "nome": "Irmaul", 'bonus': {'descricao':'Uma familia de Homens sanguinarios e impiedodos','habilidade':'Ganha 1 ponto de Apatia a cada 2 niveis'}, 'chance': 3,
+            "id": 9, "nome": "Irmaul", 'bonus': {'descricao':'Uma familia de Homens sanguinarios e impiedodos','habilidade':'Ganha 1 ponto de Apatia a cada 2 niveis'}, 'chance':[ 3,'rgb(255, 255, 0)'],
         }, {
-            "id": 10, "nome": "Tideloot", 'bonus': {'descricao':'Uma familia de comerciantes renomados', 'habilidade':'Ganha 1 ponto de carisma por nivel'}, 'chance': 11,
+            "id": 10, "nome": "Tideloot", 'bonus': {'descricao':'Uma familia de comerciantes renomados', 'habilidade':'Ganha 1 ponto de carisma por nivel'}, 'chance':[ 10,'rgb(0, 183, 255)'],
         }, {
-            "id": 11, "nome": "Blatr", 'bonus': {'descricao':'Uma familia de pessoas astuta','habilidades':'Ganha 1 ponto de Inteligencia por nivel'}, 'chance': 10,
+            "id": 11, "nome": "Blatr", 'bonus': {'descricao':'Uma familia de pessoas astuta','habilidade':'Ganha 1 ponto de Inteligencia por nivel'}, 'chance':[ 10,'rgb(0, 183, 255)'],
         }, {
-            "id": 12, "nome": "Skueave", 'bonus': {'descricao':'Uma familia forte e resistente','habilidade':'Ganha 1 ponto de sabedoria e 1 de força por nivel'}, 'chance': 3,
+            "id": 12, "nome": "Skueave", 'bonus': {'descricao':'Uma familia forte e resistente','habilidade':'Ganha 1 ponto de sabedoria e 1 de força por nivel'}, 'chance':[ 3,'rgb(255, 255, 0)'],
         }, {
-            "id": 13, "nome": "Rotmouh", 'bonus': {'descricao':'Uma familia de seres ransinsas porem resilientes','habilidade':'Ganha 1 de constituiçâo ou em inteligencia a cada 2 niveis'}, 'chance': 15,
+            "id": 13, "nome": "Rotmouh", 'bonus': {'descricao':'Uma familia de seres ransinsas porem resilientes','habilidade':'Ganha 1 de constituiçâo ou em inteligencia a cada 2 niveis'}, 'chance':[ 14,'rgb(37, 224, 62)'],
         }, {
-            "id": 14, "nome": "Sdebor", 'bonus': {'descricao':'Uma familia de pessoas sombrias e subservientes','habilidade':'Ganha 1 ponto de força a cada 3 niveis, caso sirva ao um Skueave'}, 'chance': 16,
+            "id": 14, "nome": "Sdebor", 'bonus': {'descricao':'Uma familia de pessoas sombrias e subservientes','habilidade':'Ganha 1 ponto de força a cada 3 niveis, a cada 1 nivel caso sirva ao um Skueave'}, 'chance':[ 16,'rgb(255, 255, 255)'],
         }
 
 
@@ -284,8 +285,8 @@ export default function () {
 
     // a Familia é sempre a que ta no index 20
     let [familiaList, setFamilia] = useState([])
-    const [familisPers, setFamiliaPers] = useState({'id':0,'infoComplete':{"id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance': 1}})
-    const [spins, reduzirSpin] = useState(99)
+    const [familisPers, setFamiliaPers] = useState({'id':0,'infoComplete':familias[0]})
+    const [spins, reduzirSpin] = useState(10)
     const [spinList, setSpinList] = useState(`${styles.spins2}`)
 
     const reduSpin = () =>{
@@ -308,7 +309,7 @@ export default function () {
             setInterval(() => {
                 setSpinList(`${styles.spins2} ${styles.spins}`)
                 
-            }, 1000);
+            }, 500);
 
         }
         
@@ -346,7 +347,7 @@ export default function () {
                 <Image className={styles.imagem} alt="afis" width={500} height={600} src='/images/image.png'></Image>
 
             </div>
-            <div className={styles.divloca}>
+            <div  className={styles.divloca}>
                 <p>Quem não dar Play perde</p>
                 <iframe
                     width="340"
@@ -369,6 +370,7 @@ export default function () {
 
                 </div>
                 <button onClick={()=>(reduSpin())}>Nooosa</button>
+                <p>Spins: {spins}</p>
 
                 {<CardF
                     
