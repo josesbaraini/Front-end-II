@@ -260,7 +260,7 @@ export default function () {
         }, {
             "id": 5, "nome": "Ingerman", 'bonus': {'descricao':'Uma familia de pessoas estudiosas e empaticas','habilidade':'Ganha 1 ponto de empatia ou inteligencia por nivel'}, 'chance': 7,
         }, {
-            "id": 6, "nome": "Belchson", 'bonus': {'descricao':'Uma familia não conhecida por sua inteligencia e sim pela engenhoside','habilidede':'Uma parte do corpo é "mecanica"'}, 'chance': 7,
+            "id": 6, "nome": "Belchson", 'bonus': {'descricao':'Uma familia não conhecida por sua inteligencia e sim pela engenhoside','habilidade':'Uma parte do corpo é "mecanica"'}, 'chance': 7,
         }, {
             "id": 7, "nome": "Blorage", 'bonus': {'descricao':'A familia dos lideres da tribo dos Bersekers', 'habilidade':'Almenta em 1 dado o numeros de dados de uma arma, para cada 4 niveis'}, 'chance': 6,
         }, {
@@ -270,9 +270,9 @@ export default function () {
         }, {
             "id": 10, "nome": "Tideloot", 'bonus': {'descricao':'Uma familia de comerciantes renomados', 'habilidade':'Ganha 1 ponto de carisma por nivel'}, 'chance': 11,
         }, {
-            "id": 11, "nome": "Blatr", 'bonus': {'descricao':'Uma familia de pessoas astuta','habiliades':'Ganha 1 ponto de Inteligencia por nivel'}, 'chance': 10,
+            "id": 11, "nome": "Blatr", 'bonus': {'descricao':'Uma familia de pessoas astuta','habilidades':'Ganha 1 ponto de Inteligencia por nivel'}, 'chance': 10,
         }, {
-            "id": 12, "nome": "Skueave", 'bonus': {'descricao':'Uma familia forte e resistente','habalidade':'Ganha 1 ponto de sabedoria e 1 de força por nivel'}, 'chance': 3,
+            "id": 12, "nome": "Skueave", 'bonus': {'descricao':'Uma familia forte e resistente','habilidade':'Ganha 1 ponto de sabedoria e 1 de força por nivel'}, 'chance': 3,
         }, {
             "id": 13, "nome": "Rotmouh", 'bonus': {'descricao':'Uma familia de seres ransinsas porem resilientes','habilidade':'Ganha 1 de constituiçâo ou em inteligencia a cada 2 niveis'}, 'chance': 15,
         }, {
@@ -285,7 +285,7 @@ export default function () {
     // a Familia é sempre a que ta no index 20
     let [familiaList, setFamilia] = useState([])
     const [familisPers, setFamiliaPers] = useState({'id':0,'infoComplete':{"id": 1, "nome": "Haddock", 'bonus': {'descricao':"A Familia do chefes de Berk com uma grande capacidade de crecimento",'habilidade':"Ganha 6 pontos aleatorios de Status a cada 2 nivel(Menos Apatia e Empatia)."}, 'chance': 1}})
-    const [spins, reduzirSpin] = useState(9)
+    const [spins, reduzirSpin] = useState(99)
     const [spinList, setSpinList] = useState(`${styles.spins2}`)
 
     const reduSpin = () =>{

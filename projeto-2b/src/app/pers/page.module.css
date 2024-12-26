@@ -18,22 +18,22 @@
     align-items: center;
 }
 .spins{
-    background-color: aqua;
+    background-color: rgb(0, 0, 0);
     height: 20px;
-    font-size: 16.1px;
+    font-size: 16px;
     
     
     text-align: center;
     overflow: hidden;
 }
 .spins2{
-    background-color: aqua;
+    background-color: rgb(0, 0, 0);
     transition: none;
     width: 150px;
     height: 20px;
     text-align: center;
     overflow: hidden;
-    font-size: 16.1px;
+    font-size: 16px;
 }
 .spins2 p{
     top: 100%;
