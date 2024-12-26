@@ -3,9 +3,9 @@ import styles from "./Card.module.css";
 export default function CardF(props) {
     return (
       <div>
-        <p>{props.chance}%</p>
-        <p>{props.descricao}</p>
-        <p>{props.habilidade}</p>
+        <p style={{color: props.chance[1]}}>{props.chance[0]}%</p>
+        <p style={{color: props.chance[1]}}>{props.descricao}</p>
+        <p style={{color: props.chance[1]}}>{props.habilidade}</p>
   
         
       </div>
