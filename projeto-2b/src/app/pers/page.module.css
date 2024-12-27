@@ -59,7 +59,7 @@
     font-family: 'Arial', sans-serif;
     
     top: -1900%;
-    transition: none;
+    transition: 10s;
 
     
 }
