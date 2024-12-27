@@ -181,7 +181,7 @@ const personagens =[
       'infoJ':
       {'nome':'Pastel','senha':'Pastelxiaomek4'},
       'infoP':
-      {'nome':'tem que me falar um nome ne',
+      {'nome':'Luke',
         'familia':{
           "id": 5, "nome": "Ingerman", 'bonus': {'descricao':'Uma familia de pessoas estudiosas e empaticas','habilidade':'Ganha 1 ponto de empatia ou inteligencia por nivel'}, 'chance':[ 7,'rgb(250, 0, 0)'],
       }},
@@ -220,7 +220,7 @@ const personagens =[
       'infoJ':
       {'nome':'Yuri','senha':'Yuripositivok4'},
       'infoP':
-      {'nome':'tem que me falar um nome ne',
+      {'nome':'Stico o Pequeno',
         'familia':{
           "id": 8, "nome": "Furane", 'bonus': {'descricao':"Uma Familia de pessoas obcedas com seus Objetivos",'habilidade':'Ganha 1 ponto em uma habiliade da propria escolha por nivel (Menos Apatia e Empatia)'}, 'chance':[ 3,'rgb(255, 255, 0)'],
       }},
