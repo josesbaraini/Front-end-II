@@ -19,7 +19,7 @@
 }
 .spins{
     background-color: rgb(0, 0, 0);
-    height: 40px;
+    height: 20px;
     
     
     text-align: center;
@@ -28,13 +28,13 @@
 .spins2{
     background-color: rgb(0, 0, 0);
     transition: none;
-    height: 40px;
+    height: 20px;
     width: 150px;
     text-align: center;
     overflow: hidden;
 }
 .spins2 p{
-    top: 50%;
+    top: 100%;
     font-size: 1.0416rem;
     font-family: 'Arial', sans-serif;
     
@@ -58,7 +58,7 @@
     
     font-family: 'Arial', sans-serif;
     
-    top: -887.5%;
+    top: -1775%;
     transition: 10s;
 
     
