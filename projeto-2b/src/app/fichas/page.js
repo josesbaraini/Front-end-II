@@ -318,7 +318,7 @@ export default function Props() {
           
         </div>
         <input onChange={(ev)=>(setSenhaD(ev.target.value))}></input>
-        <button onClick={()=>setPersonagen(personagens.find(per=> per.infoJ.senha == senhaD))}>Confirmar Senha</button>
+        <button onClick={()=>setPersonagen(personagens.find(per=> per.infoJ.senha == senhaD)||personagens[0])}>Confirmar Senha</button>
       </div>
 
     </div>

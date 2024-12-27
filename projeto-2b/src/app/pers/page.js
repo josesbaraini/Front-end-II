@@ -204,7 +204,9 @@ export default function () {
     let [classPB, setClassPB] = useState(0)
     
     const pegaF = ()=>{
-        return familiaList[19] || {'id':0,'infoComplete':familias[0]}
+        return familiaList[19] || {'id':0,'infoComplete':{
+            "id": 14, "nome": "", 'bonus': {'descricao':'','habilidade':''}, 'chance':[ '','rgb(255, 255, 255)'],
+        }}
 
     }
     
@@ -285,7 +287,9 @@ export default function () {
 
     // a Familia é sempre a que ta no index 20
     let [familiaList, setFamilia] = useState([])
-    const [familisPers, setFamiliaPers] = useState({'id':0,'infoComplete':familias[0]})
+    const [familisPers, setFamiliaPers] = useState({'id':0,'infoComplete':{
+            "id": 14, "nome": "", 'bonus': {'descricao':'','habilidade':''}, 'chance':[ '','rgb(255, 255, 255)'],
+        }})
     const [spins, reduzirSpin] = useState(10)
     const [spinList, setSpinList] = useState(`${styles.spins2}`)
 
@@ -304,10 +308,10 @@ export default function () {
 
         }else{
             setSpinList(`${styles.spins2}`)
-            setInterval(() => {
+            setTimeout(() => {
                 setSpinList(`${styles.spins2} ${styles.spins}`)
                 
-            }, 500);
+            }, 250);
 
         }
         
@@ -319,9 +323,12 @@ export default function () {
 
     useEffect(()=>{
         
-
-        setFamiliaPers(pegaF());
-        console.log(familisPers.infoComplete.nome)
+        setTimeout(() => {
+            setFamiliaPers(pegaF());
+            console.log(familisPers.infoComplete)
+            
+        }, 10000);
+        
         
 
     },[familiaList]);
@@ -364,7 +371,7 @@ export default function () {
                 <div className={styles.divSpins}>
                     <div className={spinList}>
                     {familiaList.map((familia)=>(
-                        <p key={familia.id}
+                        <p style={{color: familia.infoComplete.chance[1]}} key={familia.id}
                             value={familia.infoComplete.nome}
                         >{familia.infoComplete.nome}</p>
                     ))}
