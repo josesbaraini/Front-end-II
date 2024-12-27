@@ -35,7 +35,7 @@
 }
 .spins2 p{
     top: 100%;
-    font-size: 1.0416rem;
+    font-size: 17px;
     font-family: 'Arial', sans-serif;
     
     
@@ -54,12 +54,12 @@
 }
 .spins p{
     position: relative;
-    font-size: 1.0416rem;
+    font-size: 17px;
     
     font-family: 'Arial', sans-serif;
     
-    top: -1775%;
-    transition: 10s;
+    top: -1900%;
+    transition: none;
 
     
 }
