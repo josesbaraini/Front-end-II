@@ -1,6 +1,8 @@
-import localFont from "next/font/local";
+
 import "./globals.css";
 import Header from "@/components/Header";
+import { SessionProvider } from "next-auth/react";
+import Footer from "@/components/Footer";
 
 
 
@@ -16,11 +18,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        {/* <Header /> */}
-        {children}
-      </body>
-    </html>
+    <Footer>
+      <html lang="en">
+        <body>
+        
+          {/* <Header /> */}
+          {children}
+        
+        </body>
+      </html>
+    </Footer>
   );
 }

@@ -1,12 +1,6 @@
-import Image from "next/image";
+'use client';
+import { SessionProvider } from "next-auth/react";
 
-const index = () =>{
-    return (
-        <main>
-        <h1>footer</h1>
-        <p>meu paragrafo</p>
-        </main>
-    )
+export default function ClientSessionProvider({ children }) {
+  return <SessionProvider>{children}</SessionProvider>;
 }
-
-export default index

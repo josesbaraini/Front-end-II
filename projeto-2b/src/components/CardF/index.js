@@ -1,3 +1,4 @@
+'use client'
 import styles from "./Card.module.css";
 
 export default function CardF(props) {

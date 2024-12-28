@@ -1,3 +1,4 @@
+'use client'
 import styles from "./props.module.css";
 import Card from "@/components/Card"
 const carros =[
