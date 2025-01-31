@@ -1,0 +1,151 @@
+.lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: 0.6s;
+  
+
+}
+.divMedItem{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    display: none;
+   
+    
+}
+
+.divMedItemAp{
+    position: relative;
+    text-align: center;
+    display: block;
+   
+    
+}
+.divMedItem ul, .divMedItemAp ul{
+    justify-content: center;
+    list-style: none;
+    font-size: small;
+
+}
+
+
+
+.header {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: 0.6s;
+    position: relative;
+
+
+
+}
+
+.listaitem {
+    margin: 20px;
+    font-size: 40px;
+    transition: 0.6s;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    transition: 0.6s;
+    
+
+}
+
+.listaitem a:hover {
+    color: rgb(175, 175, 175);
+}
+
+.images {
+    border-radius: 100%;
+}
+
+.barras {
+    display: none;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+
+
+}
+.h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.barra{
+    background-color: var(--foreground);
+    width: 100%;
+    height: 15%;
+    border-radius: 20px;
+    margin: 4px;
+    transition: 0.9s;
+    
+    
+}
+.barra1{
+    transform: rotate(9935deg) translate(5px, 5px);
+
+}
+.barra2{
+    background-color: var(--transparent);
+    transform: rotate(-935deg) translate(5px, -5px);
+
+}
+.barra3{
+    transform: rotate(-535deg) translate(5px, -5px);
+
+}
+.teste{
+    position: relative;
+}
+@media only screen and (max-width : 800px) {
+    .barras {
+        display: flex;
+    }
+    .navaumentado{
+        width: 300px;
+        top:100%;
+        left: -10px;
+        background-color: var(--background);
+        position: absolute;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        transition: 0.6s;
+        overflow: hidden;
+        border: solid var(--foreground);
+    }
+
+    .nav { 
+        top:100%;
+        left: -10px;
+        background-color: var(--background);
+        width: 0;
+        position: absolute;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        overflow: hidden;
+    }
+    .lista{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+}
