@@ -11,8 +11,10 @@ const index = () =>{
     const [barr2, setbarra2] = useState(styles.barra);
     const [barr3, setbarra3] = useState(styles.barra);
     const [navs , setnav] = useState(styles.nav)
+    const [medDropM , setMedDropM] = useState(styles.divMedItem)
+    const [medDropP , setMedDropP] = useState(styles.divMedItem)
 
-    const [medDrop , setMedDrop] = useState(styles.divMedItem)
+    const [medDropC , setMedDropC] = useState(styles.divMedItem)
     const manipularBarra = () =>{
         setnav( navs === `${styles.navaumentado}`?styles.nav:`${styles.navaumentado}`)
         setbarra1( barr1 === `${styles.barra} ${styles.barra1}`?styles.barra:`${styles.barra} ${styles.barra1}`)
@@ -21,8 +23,18 @@ const index = () =>{
         
 
     };
-    const manipularMedDrop = () =>{
-        setMedDrop( medDrop === styles.divMedItem?styles.divMedItemAp:styles.divMedItem)
+    const manipularMedDropM = () =>{
+        setMedDropM( medDropM === styles.divMedItem?styles.divMedItemAp:styles.divMedItem)
+
+
+    }
+    const manipularMedDropP = () =>{
+        setMedDropP( medDropP === styles.divMedItem?styles.divMedItemAp:styles.divMedItem)
+
+
+    }
+    const manipularMedDropC = () =>{
+        setMedDropC( medDropC === styles.divMedItem?styles.divMedItemAp:styles.divMedItem)
 
 
     }
@@ -42,11 +54,11 @@ const index = () =>{
             <nav className={navs}>
                 <ul className={styles.lista}>
                     <li className={styles.listaitem}>
-                        <h1 className={styles.teste} onClick={()=>manipularMedDrop()}>Médico</h1>
-                        <div className={medDrop}>
+                        <h1 className={styles.teste} onClick={()=>manipularMedDropM()}>Médico</h1>
+                        <div className={medDropM}>
                         <ul>
                             <li>
-                                <Link href='/consulta'>Lista de Consulta</Link>
+                                <Link href='/Medicos'>Lista de Medicos\n</Link>
                                 
 
                             </li>
@@ -62,10 +74,42 @@ const index = () =>{
                     </li>
 
                     <li className={styles.listaitem}>
-                        <h1>Paciente</h1>
+                        <h1 className={styles.teste} onClick={()=>manipularMedDropP()}>Paciente</h1>
+                        <div className={medDropP}>
+                        <ul>
+                            <li>
+                                <Link href='/consulta'>Lista de Pacientes</Link>
+                                
+
+                            </li>
+                            <li>
+                                PApac
+                            </li>
+                            <li>
+                                PacPac                                
+                            </li>
+
+                        </ul>
+                    </div>
                     </li>
                     <li className={styles.listaitem}>
-                        <h1>Consulta</h1>
+                        <h1 className={styles.teste} onClick={()=>manipularMedDropC()}>Médico</h1>
+                        <div className={medDropC}>
+                        <ul>
+                            <li>
+                                <Link href='/consulta'>Lista de Consultas</Link>
+                                
+
+                            </li>
+                            <li>
+                                PApac
+                            </li>
+                            <li>
+                                PacPac                                
+                            </li>
+
+                        </ul>
+                    </div>
                     </li>
                 </ul>    
             </nav>
