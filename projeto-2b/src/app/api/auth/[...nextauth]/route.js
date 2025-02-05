@@ -12,12 +12,9 @@ export const authOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        const personagens = [
+        const classes=[
           {
-            id: 1,
-            'classe':
-            {
-              'id': 2,
+              'id': 0,
               'descricao': 'Uma Classe com um poder incomensuravel',
               'nome': 'Matador de Deuses',
               'bonus':
@@ -32,9 +29,95 @@ export const authOptions = {
                 'descricao': 'Pode negar uma ação de um Dragão',
                 'nome': 'Capacidade Infinita'
               },
+              'comp':{
+                'hp':60,
+                'mov':6,
+                'hps':4
+              },
+              'sub':
+                {}
+
+            },
+
+            {
+              'id': 1, 'descricao': 'Uma classe de Pessoas fortes e destemidas, prontas para lutar frente a frente com um dragão',
+              'nome':
+                'Guerreiro',
+              'bonus':
+                '-2_Emp,-4_Int,2_Con,2_Con,2_Con',
+              'passiva':
+              {
+                'descricao': 'Soma os Bonus de Str,Con e Dex como Redução de dano(A Rd é Máxima é 4X seu nivel)',
+                'nome': 'Resiliencia Viking'
+              },
+
+              'ativa':
+              {
+                'descricao': '1X por Rodada o usuario pode somar um Str, Con, ou dex a um Teste ou dano',
+                'nome': 'Fisico descomunal'
+              },
+              'comp':{
+                'hp':60,
+                'mov':6,
+                'hps':4
+              },
               'sub':
                 {}
             },
+
+            {
+              'id': 2, 'nome': 'Matador de Dragões', 'descricao': 'Uma classe de Pessios obstinadas e descididas a exterminar os dragões da terra.',
+              'bonus':
+                '-6_emp,6_stp',
+              'passiva':
+              {
+                'descricao': 'Vantegem em qualquer teste que envolva matar Dragões',
+                'nome': 'Dom natural'
+              },
+              'ativa':
+              {
+                'descricao': 'Pode negar uma ação de um Dragão(Cooldown vai ser 1.5X o cooldonw da ação cancelada)',
+                'nome': 'Capacidade avançada'
+              },
+              'comp':{
+                'hp':70,
+                'mov':7,
+                'hps':6
+              },
+              'sub':
+                {}
+            },
+
+            {
+              'id': 3, 'nome': 'Cavaleiro', 'descricao': 'Uma classe de Pessoas capazes de se conecatr profundamente a qualquer dragão.',
+              'bonus':
+                '-2_Str,-2_Con,2_Emp',
+              'passiva':
+              {
+                'descricao': '+2 em qualuquer teste que envolva dragão',
+                'nome': 'Ligação Forte'
+              },
+              'ativa':
+              {
+                'descricao': '2X por dia O Usuario ou Dragão se estivrem juntos ganham Adv em um teste',
+                'nome': 'Trabalho em Equipe'
+              },
+              'comp':{
+                'hp':50,
+                'mov':5,
+                'hps':2
+              },
+              'sub':
+                {}
+            }
+          ]
+
+        const personagens = [
+          {
+            id: 1,
+            'classe':classes[0]
+          
+            ,
             'infoJ':
               { 'nome': 'José', 'senha': 'ol' },
             'infoP':
@@ -65,28 +148,10 @@ export const authOptions = {
           },
           {
             id: 2,
-            'classe':
-            {
-              'id': 1, 'descricao': 'Uma classe de Pessoas fortes e destemidas, prontas para lutar frente a frente com um dragão',
-              'nome':
-                'Guerreiro',
-              'bonus':
-                '-2_Emp,-4_Int,2_Con,2_Con,2_Con',
-              'passiva':
-              {
-                'descricao': 'Soma os Bonus de Str,Con e Dex como Redução de dano(A Rd é Máxima é 4X seu nivel)',
-                'nome': 'Resiliencia Viking'
-              },
-              'ativa':
-              {
-                'descricao': '1X por Rodada o usuario pode somar um Str, Con, ou dex a um Teste ou dano',
-                'nome': 'Fisico descomunal'
-              },
-              'sub':
-                {}
-            },
+            'classe':classes[1]
+            ,
             'infoJ':
-              { 'nome': 'Pedro', 'senha': 'Pedroapplek8' },
+              { 'nome': 'Pedro', 'senha': 'Pedroapplek8','spins':2 },
             'infoP':
             {
               'nome': 'Urias Belchson',
@@ -115,25 +180,7 @@ export const authOptions = {
           },
           {
             id: 3,
-            'classe':
-            {
-              'id': 1,
-              'nome': 'Guerreiro', 'descricao': 'Uma classe de Pessoas fortes e destemidas, prontas para lutar frente a frente com um dragão',
-              'bonus':
-                '-2_Emp,-4_Int,2_Con,2_Con,2_Con',
-              'passiva':
-              {
-                'descricao': 'Soma os Bonus de Str,Con e Dex como Redução de dano(A Rd é Máxima é 4X seu nivel)',
-                'nome': 'Resiliencia Viking'
-              },
-              'ativa':
-              {
-                'descricao': '1X por Rodada o usuario pode somar um Str, Con, ou dex a um Teste ou dano',
-                'nome': 'Fisico descomunal'
-              },
-              'sub':
-                {}
-            },
+            'classe':classes[1],
             'infoJ':
               { 'nome': 'Lucas', 'senha': 'Lucaslgk10' },
             'infoP':
@@ -165,24 +212,7 @@ export const authOptions = {
 
           {
             id: 4,
-            'classe':
-            {
-              'id': 2, 'nome': 'Matador de Dragões', 'descricao': 'Uma classe de Pessios obstinadas e descididas a exterminar os dragões da terra.',
-              'bonus':
-                '-6_emp,6_stp',
-              'passiva':
-              {
-                'descricao': 'Vantegem em qualquer teste que envolva matar Dragões',
-                'nome': 'Dom natural'
-              },
-              'ativa':
-              {
-                'descricao': 'Pode negar uma ação de um Dragão(Cooldown vai ser 1.5X o cooldonw da ação cancelada)',
-                'nome': 'Capacidade avançada'
-              },
-              'sub':
-                {}
-            },
+            'classe':classes[2],
             'infoJ':
               { 'nome': 'Guilherme', 'senha': 'Guilhermemotorolak9' },
             'infoP':
@@ -213,24 +243,7 @@ export const authOptions = {
           },
           {
             id: 5,
-            'classe':
-            {
-              'id': 3, 'nome': 'Cavaleiro', 'descricao': 'Uma classe de Pessoas capazes de se conecatr profundamente a qualquer dragão.',
-              'bonus':
-                '-2_Str,-2_Con,2_Emp',
-              'passiva':
-              {
-                'descricao': '+2 em qualuquer teste que envolva dragão',
-                'nome': 'Ligação Forte'
-              },
-              'ativa':
-              {
-                'descricao': '2X por dia O Usuario ou Dragão se estivrem juntos ganham Adv em um teste',
-                'nome': 'Trabalho em Equipe'
-              },
-              'sub':
-                {}
-            },
+            'classe':classes[3],
             'infoJ':
               { 'nome': 'Pastel', 'senha': 'Pastelxiaomek4' },
             'infoP':
@@ -261,24 +274,7 @@ export const authOptions = {
           },
           {
             id: 6,
-            'classe':
-            {
-              'id': 3, 'nome': 'Cavaleiro', 'descricao': 'Uma classe de Pessoas capazes de se conecatr profundamente a qualquer dragão.',
-              'bonus':
-                '-2_Str,-2_Con,2_Emp',
-              'passiva':
-              {
-                'descricao': '+2 em qualuquer teste que envolva dragão',
-                'nome': 'Ligação Forte'
-              },
-              'ativa':
-              {
-                'descricao': '2X por dia O Usuario ou Dragão se estivrem juntos ganham Adv em um teste',
-                'nome': 'Trabalho em Equipe'
-              },
-              'sub':
-                {}
-            },
+            'classe':classes[3],
             'infoJ':
               { 'nome': 'Yuri', 'senha': 'Yuripositivok4' },
             'infoP':
@@ -296,7 +292,7 @@ export const authOptions = {
               'con': 10,
               'amp': 8,
               'emp': 15,
-              'cha': 15
+              'cha': 15,
 
             },
             'dracos': [

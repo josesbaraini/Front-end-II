@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { SessionProvider, useSession} from "next-auth/react";
+import { floor } from "lodash";
 
 
 
@@ -18,7 +19,8 @@ export default function Props() {
     if (status === "authenticated" && session.user) {
       // Só atualiza o estado quando a sessão estiver disponível
       setPersonagen(session.user);
-      console.log(session.user.infoP)
+      console.log(session.user.classe.comp.hp);
+      
     }
   }, [session, status]);
 
@@ -79,14 +81,14 @@ export default function Props() {
               
               <h1>Estatisticas:</h1>
               <div>
-                <p>Força: {personagen.estatisticas.str}</p>
-                <p>Destreza: {personagen.estatisticas.dex}</p>
-                <p>Constituicao: {personagen.estatisticas.con}</p>
-                <p>Carisma: {personagen.estatisticas.cha}</p>
-                <p>Inteligencia: {personagen.estatisticas.int}</p>
-                <p>Sabedoria: {personagen.estatisticas.wis}</p>
-                <p>Apatia: {personagen.estatisticas.amp}</p>
-                <p>Empatia: {personagen.estatisticas.emp}</p>
+                <p>Força: {personagen.estatisticas.str} ({Math.floor(((personagen.estatisticas.str)-10)/2)})</p>
+                <p>Destreza: {personagen.estatisticas.dex} ({Math.floor(((personagen.estatisticas.dex)-10)/2)})</p>
+                <p>Constituicao: {personagen.estatisticas.con} ({Math.floor(((personagen.estatisticas.con)-10)/2)})</p>
+                <p>Carisma: {personagen.estatisticas.cha} ({Math.floor(((personagen.estatisticas.cha)-10)/2)})</p>
+                <p>Inteligencia: {personagen.estatisticas.int} ({Math.floor(((personagen.estatisticas.int)-10)/2)})</p>
+                <p>Sabedoria: {personagen.estatisticas.wis} ({Math.floor(((personagen.estatisticas.wis)-10)/2)})</p>
+                <p>Apatia: {personagen.estatisticas.amp} (X{Math.round((((personagen.estatisticas.amp)/10)*0.75) * 4) / 4})</p>
+                <p>Empatia: {personagen.estatisticas.emp} (X{Math.round((((personagen.estatisticas.emp)/10)*0.75) * 4) / 4})</p>
   
               </div> 
             </div>
