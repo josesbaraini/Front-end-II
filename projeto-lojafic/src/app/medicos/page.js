@@ -21,7 +21,7 @@ export default function Afis() {
             throw new Error('Deu rum buscando os dados'+ response.statusText);
             }
         const data = await response.json();
-        setMedicos(data)
+        setMedicos(data);
 
 
     }
@@ -30,10 +30,10 @@ export default function Afis() {
         getMedicos();
     },[]);
     return (
-      <div className={styles.page}>
-        <div>
-            <h1>Titulo de teste</h1>
-            <table>
+      <>
+        <div className={styles.conteiner}>
+            <h1 className={styles.titulo}>Lista de Médicos</h1>
+            <table className={styles.tabela}>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -56,6 +56,6 @@ export default function Afis() {
             </table>
         </div>
        
-      </div>
+      </>
     );
   }
