@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 
 
 export default function Afis() {
+    let [nome,setNome] = useState('')
     let [medicos,setMedicos] = useState([{
         "id": 1,
         "nome": "Alice Alves Nogueira",
@@ -33,6 +34,7 @@ export default function Afis() {
       <>
         <div className={styles.conteiner}>
             <h1 className={styles.titulo}>Lista de Médicos</h1>
+            <input onChange={(e) => setNome(e.target.value)} ></input><h1 onClick={}>Clica ai men</h1>
             <table className={styles.tabela}>
                 <thead>
                     <tr>
