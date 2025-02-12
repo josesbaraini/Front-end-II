@@ -4,32 +4,36 @@ import styles from "./page.module.css";
 
 
 export default function Afis() {
-    let [nome,setNome] = useState('')
-    let [medicos,setMedicos] = useState([{
-        "id": 1,
-        "nome": "Alice Alves Nogueira",
-        "telefone": "(69) 99932-9014",
-        "especialidade":"Anestesiologia"},
-        {
-          "id": 2,
-          "nome": "Alce Silva",
-          "telefone": "(99) 99999-9999",
-          "especialidade":"Anestesiologia"}
+    let [nome,setNome] = useState(undefined)
+    let [medicos,setMedicos] = useState([
       ])
-    const getMedicos = async () =>{
-        const response = await fetch('https://back-end-ii-3xed.onrender.com/medicos');
+    const getMedicos = async (nome) =>{
+        let response = await fetch('https://api-clinica-2a.onrender.com/medicos');
+        let data = await response.json();
+        console.log(data,nome)
+        if (typeof nome == 'undefined') {
+            setMedicos(data);
+            
+        } else {
+            data = data.filter(item => item.nome.toLowerCase().includes(nome.toLowerCase()));
+            setMedicos(data);
+
+        
+            
+        }
+        
         if (!response.ok) {
             throw new Error('Deu rum buscando os dados'+ response.statusText);
             }
-        const data = await response.json();
-        setMedicos(data);
+        
+        
 
 
     }
 
     useEffect(()=>{
-        getMedicos();
-    },[]);
+        getMedicos(nome);
+    },[nome]);
     return (
       <>
         <div className={styles.conteiner}>
@@ -41,6 +45,7 @@ export default function Afis() {
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Telefone</th>
+                        <th>Email</th>
                         <th>Especialidade</th>
                     </tr>
                 </thead>
@@ -50,6 +55,7 @@ export default function Afis() {
                         <td>{medico.id}</td>
                         <td>{medico.nome}</td>
                         <td>{medico.telefone}</td>
+                        <td>{medico.email}</td>
                         <td>{medico.especialidade}</td>
                     </tr>
 

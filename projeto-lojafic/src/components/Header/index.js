@@ -88,7 +88,7 @@ const index = () => {
                         <div className={medDropP}>
                             <ul>
                                 <li>
-                                    <Link href='/consulta'>Lista de Pacientes</Link>
+                                    <Link href='/pacientes'>Lista de Pacientes</Link>
 
 
                                 </li>
@@ -103,11 +103,11 @@ const index = () => {
                         </div>
                     </li>
                     <li className={styles.listaitem}>
-                        <h1 className={styles.teste} onClick={() => manipularMedDropC()}>Médico</h1>
+                        <h1 className={styles.teste} onClick={() => manipularMedDropC()}>Consultas</h1>
                         <div className={medDropC}>
                             <ul>
                                 <li>
-                                    <Link href='/consulta'>Lista de Consultas</Link>
+                                    <Link href='/consultas'>Lista de Consultas</Link>
 
 
                                 </li>
