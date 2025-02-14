@@ -58,7 +58,7 @@ export default function Afis() {
       <>
         <div className={styles.conteiner}>
             <h1 className={styles.titulo}>Lista de Consultas</h1>
-            <input onChange={(e) => functionNomeP(e)} ></input><input onChange={(e) => functionNomeM(e)} ></input>
+            <input placeholder="Paciente" onChange={(e) => functionNomeP(e)} ></input><input placeholder="Medico" onChange={(e) => functionNomeM(e)} ></input>
             <table className={styles.tabela}>
                 <thead>
                     <tr>
